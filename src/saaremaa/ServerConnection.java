@@ -7,11 +7,15 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+/**
+ * mihin tÃ¤tÃ¤ tarvii jos ClientConnection:issa on sekÃ¤ input ettÃ¤ output?
+ * eiks vastaanottaminen onnistu sieltÃ¤ki iah hyvin?
+ */
 public class ServerConnection {
 	//TODO Viestien vastaanottaminen jnee..
 	ServerSocket MyServer;
 	Socket ClientSocket;
-	//Käytetään vastaaottamaan dataa
+	//Kï¿½ytetï¿½ï¿½n vastaaottamaan dataa
 	DataInputStream input;
 	DataOutputStream output;
 	int portNumber;
