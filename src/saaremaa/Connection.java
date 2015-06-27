@@ -1,18 +1,27 @@
 package saaremaa;
 
+import java.net.InetAddress;
+import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Connection {
-	Socket MyClient;
+	ServerSocket MyClient;
+	int portNumber;
 	
-	public void createSocket(int PortNumber){
+	
+	public void createListeningSocket(int PortNumber){
 		try{
-		MyClient = new Socket("Pc-Name", PortNumber);
-		return;
+			portNumber = PortNumber;
+			MyClient = new ServerSocket(PortNumber);
+			return;
 		}
 		catch (Exception e){
 			System.out.println(e);
 		}
+	}
+	
+	public int getPortNumber(){
+		return portNumber;
 	}
 
 }

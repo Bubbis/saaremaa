@@ -1,9 +1,12 @@
 package saaremaa;
+
+import saaremaaTest.ConnectionTest;
+
 //Kommentti
 public class Main {
 
-	public static void Main(String[] args){
-		return;
+	public static void main(String[] args){
+		ConnectionTest.runTests();
 	}
 	
 	
