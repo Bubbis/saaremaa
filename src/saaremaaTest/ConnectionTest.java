@@ -1,11 +1,11 @@
 package saaremaaTest;
 
-import saaremaa.Connection;
+import saaremaa.ServerConnection;
 
 public class ConnectionTest {
 
 	public static void runTests(){
-		Connection connection = new Connection();
+		ServerConnection connection = new ServerConnection();
 		connection.createListeningSocket(123);
 		System.out.println(connection.getPortNumber());
 	}

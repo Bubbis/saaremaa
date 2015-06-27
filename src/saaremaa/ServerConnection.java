@@ -4,8 +4,9 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-public class Connection {
+public class ServerConnection {
 	ServerSocket MyClient;
+	
 	int portNumber;
 	
 	
