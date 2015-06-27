@@ -1,20 +1,30 @@
 package saaremaa;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 
 public class ServerConnection {
-	ServerSocket MyClient;
-	
+	//TODO Viestien vastaanottaminen jnee..
+	ServerSocket MyServer;
+	Socket ClientSocket;
+	//K‰ytet‰‰n vastaaottamaan dataa
+	DataInputStream input;
+	DataOutputStream output;
 	int portNumber;
+	
 	
 	
 	public void createListeningSocket(int PortNumber){
 		try{
 			portNumber = PortNumber;
-			MyClient = new ServerSocket(PortNumber);
-			return;
+			MyServer = new ServerSocket(PortNumber);
+			ClientSocket = MyServer.accept();
+			input = new DataInputStream(ClientSocket.getInputStream());
+			output = new DataOutputStream(ClientSocket.getOutputStream());
 		}
 		catch (Exception e){
 			System.out.println(e);
@@ -23,6 +33,10 @@ public class ServerConnection {
 	
 	public int getPortNumber(){
 		return portNumber;
+	}
+	
+	public void sendNumber(int number) throws IOException{
+		output.writeInt(number);
 	}
 
 }

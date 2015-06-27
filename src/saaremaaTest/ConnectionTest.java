@@ -6,7 +6,8 @@ public class ConnectionTest {
 
 	public static void runTests(){
 		ServerConnection connection = new ServerConnection();
-		connection.createListeningSocket(123);
+		//Suositellaan k‰ytt‰m‰‰n yli 1023 porttinumeroa
+		connection.createListeningSocket(1030);
 		System.out.println(connection.getPortNumber());
 	}
 	
