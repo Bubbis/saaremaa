@@ -10,8 +10,8 @@ import saaremaaTest.ConnectionTest;
 public class Main {
 
 	public static void main(String[] args) throws UnknownHostException, IOException{
-		//ConnectionTest.runTests();
-		ClientConnectionTest.runTests();
+		ConnectionTest.runTests();
+		//ClientConnectionTest.runTests();
 	}
 	
 	
