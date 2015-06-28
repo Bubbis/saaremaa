@@ -23,6 +23,7 @@ public class ClientConnection {
 		output.writeInt(number);
 	}
 	
+	
 	public void closeConnection(){
 		try{
 			output.close();
