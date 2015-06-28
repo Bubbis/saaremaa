@@ -19,7 +19,20 @@ public class ClientConnection {
 		
 	}
 	
+	public void sendInt(int number) throws IOException{
+		output.writeInt(number);
+	}
 	
+	public void closeConnection(){
+		try{
+			output.close();
+			input.close();
+			socket.close();
+		}
+		catch (IOException e){
+			System.out.println(e);
+		}
+	}
 	
 	
 	

@@ -19,6 +19,7 @@ public class ServerConnection {
 	DataInputStream input;
 	DataOutputStream output;
 	int portNumber;
+	int recivedNumber;
 	
 	
 	
@@ -26,9 +27,16 @@ public class ServerConnection {
 		try{
 			portNumber = PortNumber;
 			MyServer = new ServerSocket(PortNumber);
+			System.out.println(MyServer.getInetAddress());
+			System.out.println(MyServer.getLocalPort());
 			ClientSocket = MyServer.accept();
 			input = new DataInputStream(ClientSocket.getInputStream());
 			output = new DataOutputStream(ClientSocket.getOutputStream());
+			System.out.println("Client connected");
+			while (true){
+				recivedNumber = input.readInt();
+				System.out.println(recivedNumber);
+			}
 		}
 		catch (Exception e){
 			System.out.println(e);
@@ -41,6 +49,18 @@ public class ServerConnection {
 	
 	public void sendNumber(int number) throws IOException{
 		output.writeInt(number);
+	}
+	
+	public void closeConnection(){
+		try{
+			output.close();
+			input.close();
+			ClientSocket.close();
+			MyServer.close();
+		}
+		catch (IOException e){
+			System.out.println(e);
+		}
 	}
 
 }
