@@ -1,15 +1,13 @@
 package saaremaaTest;
 
-import saaremaa.ServerConnection;
+import saaremaa.Connection.ServerConnection;
 
 public class ConnectionTest {
 
-	public static void runTests(){
-		ServerConnection connection = new ServerConnection();
-		//Suositellaan käyttämään yli 1023 porttinumeroa
-		connection.createListeningSocket(1030);
-	}
-	
-	
-	
+    public static void runTests() {
+        ServerConnection connection = new ServerConnection();
+        //Suositellaan kï¿½yttï¿½mï¿½ï¿½n yli 1023 porttinumeroa
+        connection.createListeningSocket(1030);
+    }
+
 }

@@ -9,12 +9,9 @@ import saaremaaTest.ConnectionTest;
 //Kommentti
 public class Main {
 
-	public static void main(String[] args) throws UnknownHostException, IOException{
-		ConnectionTest.runTests();
-		//ClientConnectionTest.runTests();
-	}
-	
-	
-	
-	
+    public static void main(String[] args) throws UnknownHostException, IOException {
+        ConnectionTest.runTests();
+        //ClientConnectionTest.runTests();
+    }
+
 }
